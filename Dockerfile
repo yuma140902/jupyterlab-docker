@@ -9,5 +9,6 @@ RUN python3 -m pip install --upgrade pip \
     matplotlib \
     japanize_matplotlib \
     pandas \
+    polars \
     plotly
 
