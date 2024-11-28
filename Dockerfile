@@ -10,5 +10,7 @@ RUN python3 -m pip install --upgrade pip \
     japanize_matplotlib \
     pandas \
     polars \
-    plotly
+    pyarrow \
+    plotly \
+    seaborn
 
