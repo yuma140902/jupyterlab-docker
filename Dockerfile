@@ -36,7 +36,7 @@ RUN mise use -g uv \
 &&  mise install
 
 WORKDIR /app
-RUN uv python install 3.12
+RUN mise use -g python@3.12
 RUN npm init -y \
 &&  npm install --save-dev \
     pyright \
@@ -62,3 +62,5 @@ RUN uv add \
     pyarrow \
     plotly \
     seaborn
+
+RUN npm install -g tslab && uv sync && source .venv/bin/activate && tslab install
