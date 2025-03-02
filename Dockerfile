@@ -49,6 +49,7 @@ RUN uv init \
     jupyterlab_code_formatter \
     isort \
     black \
+    ruff \
     ipywidgets \
     import-ipynb
 
