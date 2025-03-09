@@ -17,7 +17,11 @@ ENV RUST_HOME="/usr/local/rustup" \
     MISE_DATA_DIR="/mise" \
     MISE_CONFIG_DIR="/mise" \
     MISE_CACHE_DIR="/mise/cache" \
-    MISE_INSTALL_PATH="/usr/local/bin/mise"
+    MISE_INSTALL_PATH="/usr/local/bin/mise" \
+    SHELL="/bin/bash"
+
+RUN echo "export PATH=$PATH" >> /root/.bashrc ; \
+    echo "export PATH=$PATH" >> /root/.profile
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
     sh -s -- -y --default-toolchain ${RUST_VERSION}
@@ -64,3 +68,5 @@ RUN uv add \
     seaborn
 
 RUN npm install -g tslab && uv sync && source .venv/bin/activate && tslab install
+
+SHELL ["/bin/bash", "-c"]
