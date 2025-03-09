@@ -37,6 +37,7 @@ RUN cargo install evcxr_jupyter \
 RUN curl https://mise.run | sh
 RUN mise use -g uv \
 &&  mise use -g node@20 \
+&&  mise use -g deno \
 &&  mise install
 
 WORKDIR /app
@@ -68,5 +69,6 @@ RUN uv add \
     seaborn
 
 RUN npm install -g tslab && uv sync && source .venv/bin/activate && tslab install
+RUN deno jupyter --install
 
 SHELL ["/bin/bash", "-c"]
