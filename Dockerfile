@@ -66,7 +66,8 @@ RUN uv add \
     polars \
     pyarrow \
     plotly \
-    seaborn
+    seaborn \
+    scipy
 
 RUN npm install -g tslab && uv sync && source .venv/bin/activate && tslab install
 RUN deno jupyter --install
